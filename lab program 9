@@ -1,0 +1,68 @@
+***LOW***
+***1
+try:
+    numerator = 10
+    denominator = 0
+    result = numerator / denominator
+    print("Result:", result)
+except ZeroDivisionError:
+    print("Error: Division by zero!")
+
+***2
+try:
+    user_input = input("Enter an integer: ")
+    integer_value = int(user_input)
+    print("Integer entered:", integer_value)
+except ValueError:
+    print("Error: Invalid input. Please enter a valid integer.")
+
+***3
+try:
+    num1 = input("Enter the first number: ")
+    num2 = input("Enter the second number: ")
+    result = int(num1) + int(num2)
+    print("Sum:", result)
+except ValueError:
+    print("Error: Please enter numerical values.")
+except TypeError:
+    print("Error: Please enter numerical values.")
+
+***MEDIUM***
+***1
+try:
+    with open("nonexistent_file.txt", "r") as file:
+        content = file.read()
+    print("File content:", content)
+except FileNotFoundError:
+    print("Error: File not found.")
+
+***2
+try:
+    my_list = [1, 2, 3]
+    index = 5
+    value = my_list[index]
+    print("Value at index", index, ":", value)
+except IndexError:
+    print("Error: Index out of range.")
+
+***HIGH***
+***1
+try:
+    with open("nonexistent_file.txt", "r") as file:
+        content = file.read()
+    print("File content:", content)
+    result = 10 / 0
+    print("Result:", result)
+    my_list = [1, 2, 3]
+    index = 5
+    value = my_list[index]
+    print("Value at index", index, ":", value)
+
+except FileNotFoundError:
+    print("Error: File not found.")
+except ZeroDivisionError:
+    print("Error: Division by zero!")
+except IndexError:
+    print("Error: Index out of range.")
+except Exception as e:
+    print("An unexpected error occurred:", e)
